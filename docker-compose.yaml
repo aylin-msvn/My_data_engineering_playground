@@ -12,7 +12,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: secret
     volumes:
-      - ./source_db_init/init.sql:/docker-entrypoint-initdb.d/init.sql
+     - ./source_dbt_init:/docker-entrypoint-initdb.d # Mounting the source DB initialization scripts
 
   destination_postgres:
     image: postgres:15
